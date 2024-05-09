@@ -1,0 +1,130 @@
+/* 
+Des interpolations;
+Des mixins;
+Des placeholders;
+ */
+
+
+@use 'partials/variables' as var;
+@use 'header';
+@use 'footer';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+
+    @media screen and (min-width: 1024px) {
+        scroll-padding-top: 8rem;
+    }
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    position: relative;
+
+    main{
+        align-items: center;
+        background-color: var.$color-3;
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        padding: 6rem 2rem 4rem 2rem;
+
+        @media screen and (min-width: 1024px) {
+            padding: 10rem 2rem 4rem 2rem;
+        }
+    
+        .cards__container{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 6rem;
+            justify-content: center;
+            list-style: none;
+    
+            .card{
+                border: .16rem solid var.$color-1;
+                border-radius: .6rem;
+                box-shadow: .1rem .1rem .4rem 0 var.$color-1;
+                max-width: 960px;
+                
+                h2{
+                    background-color: var.$color-1;
+                    color: var.$color-2;
+                    font-size: 1.8rem;
+                    letter-spacing: 2px;
+                    padding: 2rem 2rem 0 2rem;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+
+                .card__content{
+                    background-color: var.$color-1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    figure{
+                        display: flex;
+                        justify-content: center;
+                        padding: 2rem;
+
+                        img{
+                            border: .3rem solid var.$color-2;
+                            max-width: 440px;
+                            width: 100%;
+                        }
+                    }
+                
+                    .card__description{
+                        background-color: var.$color-2;
+                        border-radius: 0 0 .4rem .4rem;
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 1.4rem;
+                        font-weight: 200;
+                        gap: 1rem;
+                        line-height: 1.2;
+                        padding: 2rem;
+
+                        h3{
+                            font-size: 1.6rem;
+                        }
+
+                        span{
+                            font-size: 1.2rem;
+                            font-weight: 900;
+                            padding-top: 4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .hidden{
+        display: none;
+    }
+    
+    .open{
+        animation: slideInFromBottom .4s forwards;
+        transition: .2s; 
+    }
+    
+    @keyframes slideInFromBottom{
+        from{
+            transform: translateY(100%);
+        }
+        to{
+            transform: translateY(0);
+        }
+    }
+}

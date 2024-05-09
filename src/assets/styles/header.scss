@@ -1,0 +1,122 @@
+@use 'partials/variables' as var;
+
+header{
+    align-items: center;
+    background-color: var.$color-1;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 2rem;
+    position: fixed;
+    width: 100%;
+
+    @media screen and (min-width: 1024px) {
+        padding: 2rem;
+    }
+
+    h1{
+        color: var.$color-2;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .return-top{
+        background-color: white;
+        border: .2rem solid var.$color-1;
+        bottom: 0;
+        cursor: pointer;
+        padding: .2rem .1rem .4rem .1rem;
+        position: fixed;
+        right: 4dvw;
+        transform: scale(1.4);
+        transition: .2s;
+    }
+
+    .return-top:hover{
+        background-color: var.$color-4;
+        padding: 2.5rem .1rem 2rem .1rem;
+    }
+
+    .return-top:active{
+        padding: .2rem .1rem 4.5rem .1rem;
+    }
+
+    .menu__btn{
+        background-color: var.$color-2;
+        border-radius: .4rem;
+        cursor: pointer;
+        display: flex;
+        padding: .2rem;
+        transform: scale(1.2);
+        transition: .2s;
+
+        @media screen and (min-width: 1024px) {
+            transform: scale(1.6);
+        }
+    }
+
+    .menu__btn:hover{
+        background-color: var.$color-4;
+        transform: rotate(-4deg) scale(1);
+    }
+
+    .dialog{
+        background-color: rgba(0, 0, 0, .4);
+        left: 0;
+        height: 100%;
+        position: fixed;
+        transition: .3s;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+
+        nav{
+            align-items: flex-end;
+            background-color: var.$color-2;
+            border-right: .3rem solid var.$color-1;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            height: 100%;
+            padding: 2.5rem 2rem;
+            width: min(85dvw, calc(100dvw - 2rem));
+        
+            .close__btn{
+                cursor: pointer;
+                transform: scale(1.6);
+                transition: .2s;
+            }
+
+            .close__btn:hover{
+                transform: rotate(-4deg) scale(1.2);
+            }
+    
+            ul{
+                align-items: flex-end;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                list-style: none;
+        
+                li{
+                    a{
+                        color: var.$color-1;
+                        font-size: 1.6rem;
+                        letter-spacing: 1px;
+                        text-decoration: none;
+                    }
+
+                    a:hover{
+                        color: var.$color-4;
+                        text-decoration: underline;
+                    }
+
+                    a:active{
+                        color: var.$color-3;
+                        filter: brightness(.8);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    } 
+}
