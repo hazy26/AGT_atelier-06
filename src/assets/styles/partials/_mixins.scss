@@ -1,0 +1,13 @@
+@mixin btn-menu($btn-type){
+    background-color: $btn-type;
+    border-radius: .4rem;
+    cursor: pointer;
+    display: flex;
+    padding: .2rem;
+    transform: scale(1.2);
+    transition: .3s;
+
+    @media screen and (min-width: 1024px) {
+        transform: scale(1.4);
+    }
+}

@@ -1,4 +1,5 @@
 @use 'partials/variables';
+@use 'partials/mixins' as mixins;
 
 footer{
     align-items: center;

@@ -1,13 +1,30 @@
-/* 
-Des interpolations;
-Des mixins;
-Des placeholders;
- */
-
-
 @use 'partials/variables' as var;
+@use 'partials/mixins' as mixins;
 @use 'header';
 @use 'footer';
+
+%placeholder{
+    color: var.$color-1;
+    font-family: 'helvetica';
+    font-size: 2.2rem;
+
+    p{
+        @extend %placeholder-content;
+    }
+
+    h2{
+        @extend %placeholder-second-title;
+    }
+}
+
+%placeholder-second-title{
+    font-size: 1.6rem;
+}
+
+%placeholder-content{
+    font-size: 1.1rem;
+    font-weight: 300;
+}
 
 *{
     box-sizing: border-box;
@@ -16,6 +33,9 @@ Des placeholders;
 }
 
 :root{
+    @extend %placeholder;
+    @extend %placeholder-content;
+    @extend %placeholder-second-title;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
 
@@ -59,7 +79,6 @@ body{
                 h2{
                     background-color: var.$color-1;
                     color: var.$color-2;
-                    font-size: 1.8rem;
                     letter-spacing: 2px;
                     padding: 2rem 2rem 0 2rem;
                     text-align: center;
@@ -89,7 +108,6 @@ body{
                         border-radius: 0 0 .4rem .4rem;
                         display: flex;
                         flex-direction: column;
-                        font-size: 1.4rem;
                         font-weight: 200;
                         gap: 1rem;
                         line-height: 1.2;

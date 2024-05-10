@@ -17,14 +17,14 @@ header {
 header h1 {
   color: #fff;
   letter-spacing: 2px;
-  font-size: 2.2rem;
 }
 
 header .return-top {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #f0dfad;
   border: .2rem solid #000;
-  padding: .2rem .1rem .4rem;
+  border-radius: .8rem .8rem 0 0;
+  padding: .2rem .2rem .4rem;
   transition: all .2s;
   position: fixed;
   bottom: 0;
@@ -33,12 +33,11 @@ header .return-top {
 }
 
 header .return-top:hover {
-  background-color: #f0dfad;
-  padding: 2.5rem .1rem 2rem;
+  padding: .2rem .2rem 1.2rem;
 }
 
 header .return-top:active {
-  padding: .2rem .1rem 4.5rem;
+  padding: .2rem .2rem 3.2rem;
 }
 
 header .menu__btn {
@@ -46,20 +45,20 @@ header .menu__btn {
   background-color: #fff;
   border-radius: .4rem;
   padding: .2rem;
-  transition: all .2s;
+  transition: all .3s;
   display: flex;
   transform: scale(1.2);
 }
 
 @media screen and (width >= 1024px) {
   header .menu__btn {
-    transform: scale(1.6);
+    transform: scale(1.4);
   }
 }
 
 header .menu__btn:hover {
   background-color: #f0dfad;
-  transform: rotate(-4deg)scale(1);
+  transform: rotate(-4deg)scale(1.1);
 }
 
 header .dialog {
@@ -134,6 +133,21 @@ footer {
   display: flex;
 }
 
+:root {
+  color: #000;
+  font-family: helvetica;
+  font-size: 2.2rem;
+}
+
+:root, :root h2 {
+  font-size: 1.6rem;
+}
+
+:root, :root p {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -196,7 +210,6 @@ body main .cards__container .card h2 {
   text-transform: uppercase;
   background-color: #000;
   padding: 2rem 2rem 0;
-  font-size: 1.8rem;
 }
 
 body main .cards__container .card .card__content {
@@ -224,7 +237,6 @@ body main .cards__container .card .card__content .card__description {
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
-  font-size: 1.4rem;
   font-weight: 200;
   line-height: 1.2;
   display: flex;

@@ -15,6 +15,9 @@ function dialogs() {
         const dialog = document.querySelector(".dialog");
         dialog.classList.toggle("hidden");
         dialog.classList.toggle("open");
+        dialogBtns.forEach((btn)=>{
+            btn.classList.toggle("hidden");
+        });
     }
 }
 dialogs();
